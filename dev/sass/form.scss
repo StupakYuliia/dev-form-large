@@ -1,0 +1,76 @@
+.form-head {
+	margin-bottom: 70px;
+}
+
+.form-verification {
+	max-width: 943px;
+	width: 100%;
+	margin: 0 auto;
+	h2 {
+		font-size: 32px;
+		line-height: 1.3;
+		margin-bottom: 23px;
+		display: flex;
+		align-items: center;
+	}
+}
+
+.verification-status {
+	border: 1px solid #242424;
+    padding: 6px 8px;
+    display: inline-block;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 400;
+    margin-left: 30px;
+    letter-spacing: 0px;
+
+	&__under-consideration {
+		color: $verification;
+	}
+
+	&__verified {
+		color: $accent;
+	}
+
+	&__verification-failed {
+		color: $errors;
+	}
+}
+
+.form-description {
+	max-width: 705px;
+	font-size: 20px;
+	letter-spacing: -0.1px;
+	line-height: 1.6;
+}
+
+fieldset {
+	display: flex;
+    flex-direction: column;
+    gap: 30px;
+	margin-bottom: 60px;
+
+	h5{
+		color: $stroke;
+		font-weight: 500;
+		border-bottom: 1px solid $stroke;
+		padding-bottom: 17px;
+		line-height: 1;
+		margin-bottom: 10px;
+	}
+}
+
+input {
+	background-color: $system;
+	border: 1px solid $stroke;
+	padding: 30px;
+    border-radius: 8px;
+    line-height: 1.5;
+	color: $titles;
+
+	&::placeholder {
+		font-size: 20px;
+		color: $titles;
+	}
+}
