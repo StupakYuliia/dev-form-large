@@ -61,16 +61,180 @@ fieldset {
 	}
 }
 
+[data-display] {
+	display: none;
+}
+
+::placeholder {
+	font-family: $font-primary;
+}
+
 input {
+	width: 100%;
 	background-color: $system;
 	border: 1px solid $stroke;
 	padding: 30px;
     border-radius: 8px;
     line-height: 1.5;
 	color: $titles;
+	transition: .3s;
 
 	&::placeholder {
 		font-size: 20px;
 		color: $titles;
+		transition: .3s;
 	}
+
+	&:focus {
+		border-color: $text;
+
+		&::placeholder {
+			font-size: 0;
+			color: $text;
+		}
+	}
+
+	&:hover {
+		border-color: $text;
+	}
+
+	&:active {
+		border-color: $accent;
+	}
+}
+
+.nice-select {
+	@extend input;
+	padding: 27px 30px;
+    height: auto;
+    font-size: 20px;
+
+	.list {
+		padding: 12px 0;
+		width: 100%;
+		background-color: $background;
+		border: 1px solid $stroke;
+		border-radius: 8px;
+		color: $titles;
+
+		.option {
+			$height: 48px;
+			line-height: $height;
+			min-height: $height;
+
+			&.selected {
+				color: $accent;
+			}
+		}
+	}
+
+	&:after {
+		border-bottom: 2px solid #ffffff;
+		border-right: 2px solid #ffffff;
+		height: 7px;
+		width: 7px;
+		right: 40px;
+	}
+}
+
+.nice-select .option:hover,
+.nice-select .option.focus,
+.nice-select .option.selected.focus {
+    background-color: $system;
+}
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+.calendar-container {
+	position: relative;
+	img {
+		position: absolute;
+		right: 34px;
+		top: 32px;
+		width: 18px;
+		height: 19px;
+	}
+}
+
+.ui-widget-content {
+	background-color: $system;
+}
+
+.ui-datepicker .ui-datepicker-header {
+	background-color: $background;
+	border: none;
+	color: $titles;
+	padding: 18px 24px;
+}
+
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default,
+.ui-button,
+html .ui-button.ui-state-disabled:hover,
+html .ui-button.ui-state-disabled:active {
+    border: none;
+    background: $background;
+    color: $not-verified;
+	font-weight: 400;
+}
+
+.ui-datepicker th {
+	color: $accent;
+}
+
+.control-container {
+	margin-top: 10px;
+}
+
+.control-container__titles {
+	margin-bottom: 16px;
+	color: $not-verified;
+	font-weight: 400;
+}
+
+.radio-box {
+	position: relative;
+	margin-bottom: 12px;
+	display: inline-block;
+	margin-right: 50px;
+}
+
+[type="radio"] {
+	display: none;
+}
+
+[type="radio"] + label {
+	cursor: pointer;
+	color: $titles;
+	padding-left: 42px;
+	line-height: 27px;
+}
+
+[type="radio"] + label::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 27px;
+	height: 27px;
+	background-color: $system;
+	border: 1px solid $stroke;
+	border-radius: 50%;
+	transition: .3s;
+	background-position: center;
+	box-sizing: border-box;
+}
+
+[type="radio"]+label:hover:before {
+	background-color: #152108;
+	border: 1px solid $accent;
+}
+
+[type="radio"]:checked+label:before {
+	background: url(../assets/img/icon-check-circle.svg) center no-repeat #152108;
 }

@@ -5,9 +5,30 @@
 	</div>
 	<fieldset>
 		<h5>країна знаходження</h5>
+		<select name="country">
+			<option value="country" data-display="країна">країна</option>
+			<option value="ua">Україна</option>
+			<option value="pl">Польща</option>
+			<option value="ch">Чехія</option>
+		</select>
+	</fieldset>
+	<fieldset>
+		<h5>особиста інформація</h5>
 		<input type="text" placeholder="ім’я">
 		<input type="text" placeholder="прізвище">
 		<input type="text" placeholder="по батькові">
-		<input type="text" placeholder="телефон">
+		<input type="tel" placeholder="телефон">
+		<input type="text" data-calendar placeholder="дата народження">
+		<div class="control-container">
+			<h6 class="control-container__titles">стать</h6>
+			<div class="radio-box">
+				<input id="femaly" type="radio" checked name="gender">
+				<label for="femaly">жіноча</label>
+			</div>
+			<div class="radio-box">
+				<input id="male" type="radio" name="gender">
+				<label for="male">чоловіча</label>
+			</div>
+		</div>
 	</fieldset>
 </form>
