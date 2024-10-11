@@ -11,6 +11,7 @@
 			<option value="pl">Польща</option>
 			<option value="ch">Чехія</option>
 		</select>
+		<!-- @@include('dropdown.html') -->
 	</fieldset>
 	<fieldset>
 		<h5>особиста інформація</h5>
@@ -22,12 +23,47 @@
 		<div class="control-container">
 			<h6 class="control-container__titles">стать</h6>
 			<div class="radio-box">
-				<input id="femaly" type="radio" checked name="gender">
+				<input id="femaly" type="radio" name="gender">
 				<label for="femaly">жіноча</label>
 			</div>
 			<div class="radio-box">
 				<input id="male" type="radio" name="gender">
 				<label for="male">чоловіча</label>
+			</div>
+		</div>
+	</fieldset>
+	<fieldset>
+		<h5>адреса проживання</h5>
+		<input type="text" placeholder="місто">
+		<input type="text" placeholder="вулиця">
+
+		<div class="form-row">
+			<input type="text" placeholder="будинок">
+			<input type="number" placeholder="квартира">
+			<input type="text" placeholder="індекс" data-index>
+		</div>
+	</fieldset>
+	<fieldset>
+		<h5>підтвердження особистості</h5>
+		<div class="control-container large-radio">
+			<h6 class="control-container__titles">тип документу</h6>
+			<div class="form-row">
+				<div class="radio-box">
+					<input id="passport" type="radio" name="docs">
+					<label for="passport">паспорт</label>
+				</div>
+				<div class="radio-box">
+					<input id="foreign-passport" type="radio" name="docs">
+					<label for="foreign-passport">закордонний паспорт</label>
+				</div>
+				<div class="radio-box">
+					<input id="id-card" type="radio" name="docs">
+					<label for="id-card">ID-карткат</label>
+				</div>
+				<div class="radio-box">
+					<input id="driver's-license" type="radio" name="docs">
+					<label for="driver's-license">посвідчення водія</label>
+				</div>
 			</div>
 		</div>
 	</fieldset>

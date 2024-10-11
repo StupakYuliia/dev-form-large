@@ -48,7 +48,7 @@
 fieldset {
 	display: flex;
     flex-direction: column;
-    gap: 30px;
+    // gap: 30px;
 	margin-bottom: 60px;
 
 	h5{
@@ -57,7 +57,7 @@ fieldset {
 		border-bottom: 1px solid $stroke;
 		padding-bottom: 17px;
 		line-height: 1;
-		margin-bottom: 10px;
+		margin-bottom: 40px;
 	}
 }
 
@@ -236,5 +236,65 @@ html .ui-button.ui-state-disabled:active {
 }
 
 [type="radio"]:checked+label:before {
-	background: url(../assets/img/icon-check-circle.svg) center no-repeat #152108;
+	background: url(assets/img/icon-check-circle.svg) center no-repeat #152108;
 }
+
+.form-row {
+    display: flex;
+	margin: 0 -15px;
+    // gap: 30px;
+	> * {
+		margin: 0 15px;
+	}
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+fieldset > * {
+	margin-bottom: 30px;
+}
+
+fieldset > *:last-child {
+	margin-bottom: 0;
+}
+
+.large-radio {
+	display: flex;
+	flex-wrap: wrap;
+	.control-container__titles {
+		width: 100%;
+	}
+	.form-row {
+		margin: 0 -15px;
+		width: calc(100% + 30px);
+	}
+	.radio-box {
+		width: 100%;
+	}
+	[type=radio] + label {
+		padding: 24px 40px;
+		min-height: 104px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
+
+	[type=radio] + label:before {
+		inset: 0px;
+		width: auto;
+		height: auto;
+		border: 1px solid #4f4f4f;
+		border-radius: 12px;
+		z-index: -1;
+	}
+
+	[type=radio]:checked + label:before {
+		background-image: none;
+	}
+}
+

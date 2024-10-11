@@ -58,3 +58,15 @@ h6 {
 	margin-bottom: 62px;
 	font-size: 48px;
 }
+
+::selection {
+	background-color: $accent;
+	color: $accent-secondary;
+}
+
+[disabled] {
+	&::selection {
+		background-color: transparent;
+		color: $titles;
+	}
+}
