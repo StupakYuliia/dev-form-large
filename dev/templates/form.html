@@ -15,10 +15,10 @@
 	</fieldset>
 	<fieldset>
 		<h5>особиста інформація</h5>
-		<input type="text" placeholder="ім’я">
-		<input type="text" placeholder="прізвище">
-		<input type="text" placeholder="по батькові">
-		<input type="tel" placeholder="телефон">
+		<input type="text" placeholder="ім’я" name="user-info">
+		<input type="text" placeholder="прізвище" name="user-info">
+		<input type="text" placeholder="по батькові" name="user-info">
+		<input type="tel" placeholder="телефон" name="user-info">
 		<input type="text" data-calendar placeholder="дата народження">
 		<div class="control-container">
 			<h6 class="control-container__titles">стать</h6>
@@ -34,13 +34,13 @@
 	</fieldset>
 	<fieldset>
 		<h5>адреса проживання</h5>
-		<input type="text" placeholder="місто">
-		<input type="text" placeholder="вулиця">
+		<input type="text" placeholder="місто" name="user-info">
+		<input type="text" placeholder="вулиця" name="user-info">
 
 		<div class="form-row">
-			<input type="text" placeholder="будинок">
-			<input type="number" placeholder="квартира">
-			<input type="text" placeholder="індекс" data-index>
+			<input type="text" placeholder="будинок" name="user-info">
+			<input type="number" placeholder="квартира" name="user-info">
+			<input type="text" placeholder="індекс" name="user-info" data-index>
 		</div>
 	</fieldset>
 	<fieldset>
@@ -58,7 +58,7 @@
 				</div>
 				<div class="radio-box">
 					<input id="id-card" type="radio" name="docs">
-					<label for="id-card">ID-карткат</label>
+					<label for="id-card">ID-картка</label>
 				</div>
 				<div class="radio-box">
 					<input id="driver's-license" type="radio" name="docs">
@@ -66,5 +66,15 @@
 				</div>
 			</div>
 		</div>
+		<h6 class="control-container__titles">завантажте документ</h6>
+		@@include('drop-zone.html')
+		<div class="control-container toggle-checkbox">
+			<div class="radio-box">
+				<input id="validity-period" type="checkbox" name="validity-period">
+				<label for="validity-period">немає терміну дії <span>за умови відсутності терміну дії документу</span></label>
+			</div>
+		</div>
+		<input type="text" data-calendar placeholder="термін дії документу" name="user-info">
 	</fieldset>
+	<button class="form-btn" type="submit">продовжити</button>
 </form>

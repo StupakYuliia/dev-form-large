@@ -1,3 +1,24 @@
 @media screen and (max-width: 767px) {
+	.form-row {
+		flex-wrap: wrap;
 
+		&>input {
+			margin-bottom: 30px;
+		}
+		&>input:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.large-radio {
+		.form-row {
+			gap: 16px;
+			margin: 0 auto;
+			flex-wrap: wrap;
+		}
+		.radio-box {
+			margin: 0;
+			width: calc(100% / 2 - 8px);
+		}
+	}
 }
