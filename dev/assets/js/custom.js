@@ -9,6 +9,8 @@ $(document).ready(function() {
 		showOn: "button",
 		buttonImage: "assets/img/icon-calendar.svg",
 		buttonImageOnly: true,
+		dayNamesMin: [ "нд", "пн", "вт", "ср", "чт", "пт", "сб" ],
+		monthNames: ['січень','лютий','березень','квітень','травень','червень','липень','серпень','вересень','жовтень','листопад','грудень'],
 	});
 
 })

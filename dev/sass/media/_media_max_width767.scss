@@ -1,4 +1,8 @@
 @media screen and (max-width: 767px) {
+	.wrapper {
+		padding: 185px 0 48px;
+	}
+
 	.form-row {
 		flex-wrap: wrap;
 
@@ -19,6 +23,13 @@
 		.radio-box {
 			margin: 0;
 			width: calc(100% / 2 - 8px);
+		}
+		[type=radio] {
+			+ label {
+				font-size: 18px;
+				padding: 6px 40px;
+				min-height: 68px;
+			}
 		}
 	}
 }

@@ -160,15 +160,19 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 	}
 }
 
-.ui-widget-content {
+.ui-widget.ui-widget-content {
 	background-color: $system;
+	border: 1px solid $stroke;
+	border-radius: 10px;
 }
 
 .ui-datepicker .ui-datepicker-header {
-	background-color: $background;
+	background-color: $system;
 	border: none;
 	color: $titles;
 	padding: 18px 24px;
+	font-weight: 400;
+	text-transform: lowercase
 }
 
 .ui-state-default,
@@ -178,13 +182,34 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 html .ui-button.ui-state-disabled:hover,
 html .ui-button.ui-state-disabled:active {
     border: none;
-    background: $background;
-    color: $not-verified;
+    background: $system;
+    color: $titles;
 	font-weight: 400;
 }
 
-.ui-datepicker th {
+.ui-state-default, .ui-widget-content .ui-state-default:hover {
 	color: $accent;
+}
+
+.ui-datepicker th {
+	color: $stroke;
+}
+
+.ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next {
+	content: "";
+}
+
+.ui-datepicker .ui-datepicker-prev {
+    background: url(assets/img/icon-left.svg) center no-repeat;
+}
+
+.ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next {
+	content: "";
+	top: 18px;
+}
+
+.ui-datepicker .ui-datepicker-next {
+    background: url(assets/img/icon-right.svg) center no-repeat;
 }
 
 .control-container {
@@ -236,7 +261,7 @@ html .ui-button.ui-state-disabled:active {
 		color: $titles;
 		padding-left: 40px;
 		line-height: 27px;
-		font-size: 20px;
+		font-size: 18px;
 
 		&:before {
 			content: "";
@@ -365,26 +390,54 @@ fieldset > *:last-child {
 		width: 100%;
 	}
 
-	[type=radio] + label {
-		padding: 24px 40px;
-		min-height: 104px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		text-align: center;
+	[type=radio] {
+
+		+ label {
+			padding: 24px 40px;
+			min-height: 104px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			background-color: $background;
+			border: 1px solid $stroke;
+			border-radius: 12px;
+			transition: .3s;
+
+			&:hover  {
+				border-color: $accent;
+			}
+		}
 	}
 
-	[type=radio] + label:before {
-		inset: 0px;
-		width: auto;
-		height: auto;
-		border: 1px solid #4f4f4f;
-		border-radius: 12px;
-		z-index: -1;
+	[type=radio] {
+		+ label {
+			&:before {
+				inset: 0px;
+				width: auto;
+				height: auto;
+				border: 1px solid #4f4f4f;
+				border-radius: 12px;
+				z-index: -1;
+			}
+		}
 	}
 
-	[type=radio]:checked + label:before {
-		background-image: none;
+	[type=radio] {
+		&:checked {
+			+ label:before {
+				background-image: none;
+			}
+		}
+	}
+
+	[type=radio] {
+		&:checked {
+			+ label {
+				background-color: #152108;
+				border-color: $accent;
+			}
+		}
 	}
 }
 
@@ -436,6 +489,11 @@ input#file-input {
     font-weight: 600;
     color: $system;
     padding: 30px 0;
+	transition: .3s;
+
+	&:hover {
+		background-color: $accent-hover;
+	}
 }
 
 
